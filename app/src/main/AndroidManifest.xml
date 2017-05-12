@@ -32,6 +32,10 @@
                     android:host="auth" />
             </intent-filter>
         </activity>
+        <activity android:name=".nextActivity">
+
+
+        </activity>
     </application>
 
 </manifest>

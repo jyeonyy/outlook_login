@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/userid"
+        android:textSize="20sp"
+        android:text="userid"
+        />
+
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="ParsingStart"
+        android:id="@+id/parsingstart" />
+
+    <TextView
+        android:text="result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/parsingtext"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <Button
+        android:text="calendarinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/showcalendar" />
+
+    <TextView
+        android:text="calendar result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calenderinfo"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+</LinearLayout>

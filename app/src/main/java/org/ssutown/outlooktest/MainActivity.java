@@ -43,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName(); //Main
     Button callGraphButton;     //로그인 버튼
     Button signOutButton;       //로그아웃 버튼
+    String userID;
 
     /* Azure AD Variables */
-    private PublicClientApplication sampleApp;
-    private AuthenticationResult authResult;
+    static PublicClientApplication sampleApp;
+    static AuthenticationResult authResult;
 
 
     @Override
@@ -172,15 +173,17 @@ public class MainActivity extends AppCompatActivity {
             /* Successfully got a token, call graph now */
                 Log.d(TAG, "Successfully authenticated");
                 Log.d(TAG, "ID Token: " + authenticationResult.getIdToken());
-
             /* Store the auth result */
                 authResult = authenticationResult;
 
             /* call Graph */
-                callGraphAPI();
+                callGraphAPI();                 //로그인 하면 정보 가져오기
 
             /* update the UI to post call Graph state */
-                updateSuccessUI();
+                updateSuccessUI();              //layout 업데이트
+                // 로그인 전에는 로그인 버튼 로그인 후에는 로그아웃 버튼
+
+
             }
 
             @Override
@@ -253,8 +256,15 @@ public class MainActivity extends AppCompatActivity {
             /* Successfully called graph, process data and send to UI */
                 Log.d(TAG, "Response: " + response.toString());
 
+                userID = response.toString();
+                updateGraphUI(response);//로그인 성공 후 textview에 뿌려줌
 
-                updateGraphUI(response);                //로그인 성공 후 textview에 뿌려줌
+                Toast.makeText(MainActivity.this, userID, Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(MainActivity.this, nextActivity.class);
+                i.putExtra("userID",userID);
+                startActivity(i);
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -278,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         queue.add(request);
+
     }
 
     /* Sets the Graph response */
