@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "519416578931",
+    "firebase_url": "https://helical-ranger-167109.firebaseio.com",
+    "project_id": "helical-ranger-167109",
+    "storage_bucket": "helical-ranger-167109.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519416578931:android:00a391bbaa9fa82b",
+        "android_client_info": {
+          "package_name": "org.ssutown.outlooktest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519416578931-hoq9v7pedrtg8nv3ptclpg20lbred3b1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBimND88U8iJVpizNfSNrz6xGJ21HcXDPU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
